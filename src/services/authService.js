@@ -29,4 +29,9 @@ export const authService = {
     const response = await api.get(ENDPOINTS.DASHBOARD);
     return response.data;
   },
+
+  getGraphData: async (params = {}) => {
+    const response = await api.get(ENDPOINTS.GRAPH_DATA, { params });
+    return response.data;
+  },
 };

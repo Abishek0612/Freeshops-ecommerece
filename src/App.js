@@ -14,6 +14,8 @@ import Articles from "./pages/Articles";
 import Users from "./pages/Users";
 import Products from "./pages/Products";
 import Orders from "./pages/Orders";
+import AutoDealership from "./pages/AutoDealership";
+import Jobs from "./pages/Jobs";
 import Categories from "./pages/products/Categories";
 import SubCategories from "./pages/products/SubCategories";
 import Conditions from "./pages/products/Conditions";
@@ -68,6 +70,22 @@ function App() {
                 element={
                   <ProtectedRoute>
                     <Articles />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/auto-dealership"
+                element={
+                  <ProtectedRoute>
+                    <AutoDealership />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/jobs"
+                element={
+                  <ProtectedRoute>
+                    <Jobs />
                   </ProtectedRoute>
                 }
               />

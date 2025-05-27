@@ -1,3 +1,4 @@
+// src/utils/constants.js
 export const API_BASE_URL =
   "https://mamun-reza-freeshops-backend.vercel.app/api/v1";
 
@@ -20,6 +21,20 @@ export const ENDPOINTS = {
   USER_BY_ID: "/admin/getUserById",
   BLOCK_USER: "/admin/userActiveBlock",
   DELETE_USER: "/admin/deleteUser",
+
+  // Auto Dealership
+  AUTO_DEALERSHIP: "/admin/AutoDealerShip/allAutoDealerShip",
+  CREATE_AUTO_DEALERSHIP: "/admin/AutoDealerShip/addAutoDealerShip",
+  DELETE_AUTO_DEALERSHIP: "/admin/AutoDealerShip/deleteAutoDealerShip",
+  ADD_DATA_IN_DATA: "/admin/AutoDealerShip/addDataInData",
+  ADD_DATA_IN_PROMOTED: "/admin/AutoDealerShip/addDataInPromotedPlacement",
+  ADD_DATA_IN_EVERYTHING: "/admin/AutoDealerShip/addDataInEveryThing",
+
+  // Jobs
+  JOBS: "/admin/allJobsForAdmin",
+  JOB_BY_ID: "/admin/getJobs",
+  UPDATE_JOB: "/admin/updateJobs",
+  DELETE_JOB: "/admin/deleteJobs",
 
   // Products
   PRODUCTS: "/user/allProduct",
@@ -50,25 +65,12 @@ export const ENDPOINTS = {
   CREATE_SUB_CATEGORY: "/SubCategory/addSubcategory",
   UPDATE_SUB_CATEGORY: "/SubCategory/updateSubcategory",
   DELETE_SUB_CATEGORY: "/SubCategory/deleteSubcategory",
-  SUB_CATEGORIES_BY_CATEGORY: "/SubCategory/allSubcategoryById",
 
   // Conditions
   CONDITIONS: "/admin/Condition/allCondition",
   CREATE_CONDITION: "/admin/Condition/addCondition",
   UPDATE_CONDITION: "/admin/Condition/updateCondition",
   DELETE_CONDITION: "/admin/Condition/deleteCondition",
-
-  // Brands
-  BRANDS: "/admin/Brand/allBrand",
-  CREATE_BRAND: "/admin/Brand/addBrand",
-  UPDATE_BRAND: "/admin/Brand/updateBrand",
-  DELETE_BRAND: "/admin/Brand/deleteBrand",
-
-  // Models
-  MODELS: "/admin/Model/allModel",
-  CREATE_MODEL: "/admin/Model/addModel",
-  UPDATE_MODEL: "/admin/Model/updateModel",
-  DELETE_MODEL: "/admin/Model/deleteModel",
 };
 
 export const USER_STATUS = {
@@ -89,4 +91,15 @@ export const ORDER_STATUS = {
   SHIPPED: "Shipped",
   DELIVERED: "Delivered",
   CANCELLED: "Cancelled",
+};
+
+export const JOB_STATUS = {
+  VACANT: "Vacant",
+  FILLED: "Filled",
+};
+
+export const JOB_TYPE = {
+  REMOTE: "Remote",
+  ONSITE: "Onsite",
+  HYBRID: "Hybrid",
 };

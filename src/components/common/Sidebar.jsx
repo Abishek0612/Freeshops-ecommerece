@@ -9,6 +9,8 @@ import {
   ChevronRightIcon,
   ChevronDownIcon,
   ShoppingCartIcon,
+  TruckIcon,
+  BriefcaseIcon,
 } from "@heroicons/react/24/outline";
 
 const Sidebar = () => {
@@ -24,11 +26,19 @@ const Sidebar = () => {
 
   const menuItems = [
     { name: "Dashboard", href: "/dashboard", icon: HomeIcon },
-    { name: "Articles", href: "/articles", icon: DocumentTextIcon },
-    { name: "Users", href: "/users", icon: UsersIcon },
-    { name: "Order", href: "/orders", icon: ShoppingCartIcon },
+    { name: "Article", href: "/articles", icon: DocumentTextIcon },
+    { name: "Auto dealership", href: "/auto-dealership", icon: TruckIcon },
+    { name: "Blog", href: "/blog", icon: DocumentTextIcon },
+    { name: "Career", href: "/career", icon: BriefcaseIcon },
+    { name: "Country, state, city", href: "/locations", icon: HomeIcon },
+    { name: "FAQ's", href: "/faqs", icon: DocumentTextIcon },
+    { name: "Free shop news", href: "/free-shop-news", icon: DocumentTextIcon },
+    { name: "Help Center", href: "/help-center", icon: DocumentTextIcon },
+    { name: "How it works", href: "/how-it-works", icon: HomeIcon },
+    { name: "Jobs", href: "/jobs", icon: BriefcaseIcon },
+    { name: "Press", href: "/press", icon: DocumentTextIcon },
     {
-      name: "Products",
+      name: "Product",
       icon: ShoppingBagIcon,
       expandable: true,
       subItems: [
@@ -40,6 +50,10 @@ const Sidebar = () => {
         { name: "Model", href: "/products/models" },
       ],
     },
+    { name: "Privacy & Terms", href: "/privacy-terms", icon: DocumentTextIcon },
+    { name: "Trust & safety", href: "/trust-safety", icon: DocumentTextIcon },
+    { name: "User Management", href: "/users", icon: UsersIcon },
+    { name: "Order", href: "/orders", icon: ShoppingCartIcon },
     { name: "Settings", href: "/settings", icon: CogIcon },
   ];
 
@@ -48,7 +62,7 @@ const Sidebar = () => {
     subItems?.some((item) => isActive(item.href));
 
   return (
-    <div className="bg-white w-64 shadow-lg h-full">
+    <div className="bg-white w-64 shadow-lg h-full overflow-y-auto">
       <div className="p-6 border-b">
         <div className="flex items-center">
           <div className="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center">
