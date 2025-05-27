@@ -28,6 +28,16 @@ export const ENDPOINTS = {
   UPDATE_PRODUCT: "/admin/updateProduct",
   DELETE_PRODUCT: "/admin/deleteProduct",
 
+  // Orders
+  ORDERS: "/admin/getOrders",
+  ORDER_BY_ID: "/admin/getOrdersById",
+  TRANSACTIONS: "/admin/getTransactions",
+  TRANSACTION_BY_ID: "/admin/getTransactionsById",
+
+  // Settings & Notifications
+  SEND_NOTIFICATION: "/admin/notification/sendNotification",
+  ALL_NOTIFICATIONS: "/admin/notification/allNotification",
+
   // Categories
   CATEGORIES: "/admin/Category/allCategory",
   CREATE_CATEGORY: "/admin/Category/addCategory",
@@ -71,4 +81,12 @@ export const PRODUCT_STATUS = {
   APPROVED: "Approved",
   PENDING: "Pending",
   REJECTED: "Rejected",
+};
+
+export const ORDER_STATUS = {
+  PENDING: "Pending",
+  CONFIRMED: "Confirmed",
+  SHIPPED: "Shipped",
+  DELIVERED: "Delivered",
+  CANCELLED: "Cancelled",
 };

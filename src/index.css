@@ -4,23 +4,23 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-primary-500 hover:bg-primary-600 text-white font-medium py-2 px-4 rounded-lg transition-colors cursor-pointer;
+    @apply bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 px-6 rounded-xl transition-colors cursor-pointer shadow-md hover:shadow-lg;
   }
 
   .btn-secondary {
-    @apply bg-secondary-500 hover:bg-secondary-600 text-white font-medium py-2 px-4 rounded-lg transition-colors cursor-pointer;
+    @apply bg-teal-500 hover:bg-teal-600 text-white font-medium py-3 px-6 rounded-xl transition-colors cursor-pointer shadow-md hover:shadow-lg;
   }
 
   .btn-danger {
-    @apply bg-red-500 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition-colors cursor-pointer;
+    @apply bg-red-500 hover:bg-red-600 text-white font-medium py-3 px-6 rounded-xl transition-colors cursor-pointer shadow-md hover:shadow-lg;
   }
 
   .card {
-    @apply bg-white rounded-lg shadow-md p-6;
+    @apply bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition-shadow;
   }
 
   .input-field {
-    @apply w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent;
+    @apply w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all;
   }
 
   /* Custom cursor pointer utilities */
@@ -36,7 +36,68 @@
 
   input[type="file"],
   input[type="checkbox"],
+  input[type="radio"],
   select {
     cursor: pointer;
   }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+  }
+
+  /* Smooth transitions */
+  * {
+    transition: all 0.2s ease-in-out;
+  }
+
+  /* Improved table styling */
+  table {
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+
+  th:first-child {
+    border-top-left-radius: 0.75rem;
+  }
+
+  th:last-child {
+    border-top-right-radius: 0.75rem;
+  }
+
+  /* Modal backdrop blur */
+  .modal-backdrop {
+    backdrop-filter: blur(4px);
+  }
+}
+
+/* Global smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Better focus outlines */
+*:focus {
+  outline: 2px solid #f97316;
+  outline-offset: 2px;
+}
+
+/* Hide focus outline for mouse users */
+*:focus:not(:focus-visible) {
+  outline: none;
 }

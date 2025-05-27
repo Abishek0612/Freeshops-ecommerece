@@ -13,10 +13,11 @@ import Dashboard from "./pages/Dashboard";
 import Articles from "./pages/Articles";
 import Users from "./pages/Users";
 import Products from "./pages/Products";
+import Orders from "./pages/Orders";
 import Categories from "./pages/products/Categories";
 import SubCategories from "./pages/products/SubCategories";
 import Conditions from "./pages/products/Conditions";
-import Profile from "./pages/Profile";
+import Settings from "./pages/Settings";
 import LoadingSpinner from "./components/common/LoadingSpinner";
 
 const queryClient = new QueryClient({
@@ -79,6 +80,14 @@ function App() {
                 }
               />
               <Route
+                path="/orders"
+                element={
+                  <ProtectedRoute>
+                    <Orders />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
                 path="/products"
                 element={
                   <ProtectedRoute>
@@ -111,10 +120,10 @@ function App() {
                 }
               />
               <Route
-                path="/profile"
+                path="/settings"
                 element={
                   <ProtectedRoute>
-                    <Profile />
+                    <Settings />
                   </ProtectedRoute>
                 }
               />

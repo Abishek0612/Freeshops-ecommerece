@@ -5,9 +5,10 @@ import {
   DocumentTextIcon,
   UsersIcon,
   ShoppingBagIcon,
-  UserIcon,
+  CogIcon,
   ChevronRightIcon,
   ChevronDownIcon,
+  ShoppingCartIcon,
 } from "@heroicons/react/24/outline";
 
 const Sidebar = () => {
@@ -25,6 +26,7 @@ const Sidebar = () => {
     { name: "Dashboard", href: "/dashboard", icon: HomeIcon },
     { name: "Articles", href: "/articles", icon: DocumentTextIcon },
     { name: "Users", href: "/users", icon: UsersIcon },
+    { name: "Order", href: "/orders", icon: ShoppingCartIcon },
     {
       name: "Products",
       icon: ShoppingBagIcon,
@@ -38,7 +40,7 @@ const Sidebar = () => {
         { name: "Model", href: "/products/models" },
       ],
     },
-    { name: "Profile", href: "/profile", icon: UserIcon },
+    { name: "Settings", href: "/settings", icon: CogIcon },
   ];
 
   const isActive = (href) => location.pathname === href;
@@ -73,7 +75,7 @@ const Sidebar = () => {
                 <>
                   <button
                     onClick={() => toggleMenu(item.name)}
-                    className={`w-full flex items-center justify-between px-6 py-3 text-sm font-medium transition-colors cursor-pointer ${
+                    className={`w-full flex items-center justify-between px-6 py-3 text-sm font-medium transition-colors cursor-pointer rounded-r-2xl mr-4 ${
                       isItemActive
                         ? "bg-teal-50 text-teal-600 border-r-2 border-teal-600"
                         : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
@@ -95,7 +97,7 @@ const Sidebar = () => {
                         <NavLink
                           key={subItem.name}
                           to={subItem.href}
-                          className={`block px-8 py-2 text-sm transition-colors cursor-pointer ${
+                          className={`block px-8 py-2 text-sm transition-colors cursor-pointer rounded-r-xl mr-4 ${
                             isActive(subItem.href)
                               ? "text-teal-600 bg-teal-50 border-r-2 border-teal-600 font-medium"
                               : "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
@@ -110,7 +112,7 @@ const Sidebar = () => {
               ) : (
                 <NavLink
                   to={item.href}
-                  className={`flex items-center px-6 py-3 text-sm font-medium transition-colors cursor-pointer ${
+                  className={`flex items-center px-6 py-3 text-sm font-medium transition-colors cursor-pointer rounded-r-2xl mr-4 ${
                     isItemActive
                       ? "bg-teal-50 text-teal-600 border-r-2 border-teal-600"
                       : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
