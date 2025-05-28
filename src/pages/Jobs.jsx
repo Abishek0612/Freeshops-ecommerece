@@ -159,50 +159,6 @@ const Jobs = () => {
         </div>
       </div>
 
-      {/* Filters */}
-      <div className="bg-white rounded-2xl shadow-md p-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
-              Search
-            </label>
-            <input
-              type="text"
-              placeholder="Search jobs..."
-              value={filters.search}
-              onChange={(e) =>
-                setFilters({ ...filters, search: e.target.value, page: 1 })
-              }
-              className="w-full px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
-            />
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
-              Status
-            </label>
-            <select
-              value={filters.status}
-              onChange={(e) =>
-                setFilters({ ...filters, status: e.target.value, page: 1 })
-              }
-              className="w-full px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent cursor-pointer"
-            >
-              <option value="">All Status</option>
-              <option value={JOB_STATUS.VACANT}>Vacant</option>
-              <option value={JOB_STATUS.FILLED}>Filled</option>
-            </select>
-          </div>
-          <div className="flex items-end">
-            <button
-              onClick={refetch}
-              className="bg-orange-500 hover:bg-orange-600 text-white font-medium py-2 px-6 rounded-xl transition-colors cursor-pointer"
-            >
-              Refresh
-            </button>
-          </div>
-        </div>
-      </div>
-
       {/* Jobs Table */}
       <div className="bg-white rounded-2xl shadow-md overflow-hidden">
         {jobs.length === 0 ? (
@@ -315,7 +271,7 @@ const Jobs = () => {
 
             {/* Pagination */}
             <div className="px-6 py-3 border-t border-gray-200 text-sm text-gray-500">
-              Showing 1-12 of 1,253
+              Showing 1-12 of 1,255
             </div>
           </div>
         )}
