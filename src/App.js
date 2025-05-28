@@ -1,4 +1,3 @@
-import React from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -20,6 +19,8 @@ import Categories from "./pages/products/Categories";
 import SubCategories from "./pages/products/SubCategories";
 import Conditions from "./pages/products/Conditions";
 import Settings from "./pages/Settings";
+import BlogCategory from "./pages/blog/BlogCategory";
+import BlogPage from "./pages/blog/BlogPage";
 import LoadingSpinner from "./components/common/LoadingSpinner";
 
 const queryClient = new QueryClient({
@@ -86,6 +87,22 @@ function App() {
                 element={
                   <ProtectedRoute>
                     <Jobs />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/blog-categories"
+                element={
+                  <ProtectedRoute>
+                    <BlogCategory />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/blog"
+                element={
+                  <ProtectedRoute>
+                    <BlogPage />
                   </ProtectedRoute>
                 }
               />

@@ -7,8 +7,29 @@ export const autoDealershipService = {
     return response.data;
   },
 
-  createAutoDealership: async (data) => {
-    const response = await api.post(ENDPOINTS.CREATE_AUTO_DEALERSHIP, data);
+  createAutoDealership: async (formData) => {
+    const response = await api.post(
+      ENDPOINTS.CREATE_AUTO_DEALERSHIP,
+      formData,
+      {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      }
+    );
+    return response.data;
+  },
+
+  updateAutoDealership: async (id, formData) => {
+    const response = await api.put(
+      `${ENDPOINTS.UPDATE_AUTO_DEALERSHIP}/${id}`,
+      formData,
+      {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      }
+    );
     return response.data;
   },
 

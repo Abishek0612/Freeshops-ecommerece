@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { jobService } from "../services/jobService";
-import { JOB_STATUS, JOB_TYPE } from "../utils/constants";
+import { JOB_STATUS } from "../utils/constants";
 import {
-  EyeIcon,
   TrashIcon,
   ExclamationTriangleIcon,
 } from "@heroicons/react/24/outline";

@@ -15,7 +15,7 @@ import {
 
 const Sidebar = () => {
   const location = useLocation();
-  const [expandedMenus, setExpandedMenus] = useState({ Products: true });
+  const [expandedMenus, setExpandedMenus] = useState({ Product: true });
 
   const toggleMenu = (menuName) => {
     setExpandedMenus((prev) => ({
@@ -28,15 +28,16 @@ const Sidebar = () => {
     { name: "Dashboard", href: "/dashboard", icon: HomeIcon },
     { name: "Article", href: "/articles", icon: DocumentTextIcon },
     { name: "Auto dealership", href: "/auto-dealership", icon: TruckIcon },
-    { name: "Blog", href: "/blog", icon: DocumentTextIcon },
-    { name: "Career", href: "/career", icon: BriefcaseIcon },
-    { name: "Country, state, city", href: "/locations", icon: HomeIcon },
-    { name: "FAQ's", href: "/faqs", icon: DocumentTextIcon },
-    { name: "Free shop news", href: "/free-shop-news", icon: DocumentTextIcon },
-    { name: "Help Center", href: "/help-center", icon: DocumentTextIcon },
-    { name: "How it works", href: "/how-it-works", icon: HomeIcon },
     { name: "Jobs", href: "/jobs", icon: BriefcaseIcon },
-    { name: "Press", href: "/press", icon: DocumentTextIcon },
+    {
+      name: "Blog",
+      icon: DocumentTextIcon,
+      expandable: true,
+      subItems: [
+        { name: "Blog Category", href: "/blog-categories" },
+        { name: "Blog Page", href: "/blog" },
+      ],
+    },
     {
       name: "Product",
       icon: ShoppingBagIcon,
@@ -46,12 +47,8 @@ const Sidebar = () => {
         { name: "Category", href: "/products/categories" },
         { name: "Sub-category", href: "/products/sub-categories" },
         { name: "Conditions", href: "/products/conditions" },
-        { name: "Brand", href: "/products/brands" },
-        { name: "Model", href: "/products/models" },
       ],
     },
-    { name: "Privacy & Terms", href: "/privacy-terms", icon: DocumentTextIcon },
-    { name: "Trust & safety", href: "/trust-safety", icon: DocumentTextIcon },
     { name: "User Management", href: "/users", icon: UsersIcon },
     { name: "Order", href: "/orders", icon: ShoppingCartIcon },
     { name: "Settings", href: "/settings", icon: CogIcon },
@@ -111,11 +108,13 @@ const Sidebar = () => {
                         <NavLink
                           key={subItem.name}
                           to={subItem.href}
-                          className={`block px-8 py-2 text-sm transition-colors cursor-pointer rounded-r-xl mr-4 ${
-                            isActive(subItem.href)
-                              ? "text-teal-600 bg-teal-50 border-r-2 border-teal-600 font-medium"
-                              : "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
-                          }`}
+                          className={({ isActive }) =>
+                            `block px-6 py-2 text-sm ${
+                              isActive
+                                ? "text-teal-600 font-semibold"
+                                : "text-gray-600 hover:text-gray-800"
+                            }`
+                          }
                         >
                           {subItem.name}
                         </NavLink>
@@ -126,17 +125,16 @@ const Sidebar = () => {
               ) : (
                 <NavLink
                   to={item.href}
-                  className={`flex items-center px-6 py-3 text-sm font-medium transition-colors cursor-pointer rounded-r-2xl mr-4 ${
-                    isItemActive
-                      ? "bg-teal-50 text-teal-600 border-r-2 border-teal-600"
-                      : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
-                  }`}
+                  className={({ isActive }) =>
+                    `flex items-center px-6 py-3 text-sm font-medium rounded-r-2xl mr-4 transition-colors ${
+                      isActive
+                        ? "bg-teal-50 text-teal-600 border-r-2 border-teal-600"
+                        : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
+                    }`
+                  }
                 >
                   <item.icon className="w-5 h-5 mr-3" />
                   {item.name}
-                  {isItemActive && (
-                    <ChevronRightIcon className="w-4 h-4 ml-auto" />
-                  )}
                 </NavLink>
               )}
             </div>

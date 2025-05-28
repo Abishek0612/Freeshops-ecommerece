@@ -3,7 +3,6 @@ import { useQuery } from "@tanstack/react-query";
 import { orderService } from "../services/orderService";
 import { ORDER_STATUS } from "../utils/constants";
 import {
-  EyeIcon,
   TrashIcon,
   ExclamationTriangleIcon,
 } from "@heroicons/react/24/outline";

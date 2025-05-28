@@ -25,6 +25,7 @@ export const ENDPOINTS = {
   // Auto Dealership
   AUTO_DEALERSHIP: "/admin/AutoDealerShip/allAutoDealerShip",
   CREATE_AUTO_DEALERSHIP: "/admin/AutoDealerShip/addAutoDealerShip",
+  UPDATE_AUTO_DEALERSHIP: "/admin/AutoDealerShip/updateAutoDealerShip",
   DELETE_AUTO_DEALERSHIP: "/admin/AutoDealerShip/deleteAutoDealerShip",
   ADD_DATA_IN_DATA: "/admin/AutoDealerShip/addDataInData",
   ADD_DATA_IN_PROMOTED: "/admin/AutoDealerShip/addDataInPromotedPlacement",
@@ -71,6 +72,25 @@ export const ENDPOINTS = {
   CREATE_CONDITION: "/admin/Condition/addCondition",
   UPDATE_CONDITION: "/admin/Condition/updateCondition",
   DELETE_CONDITION: "/admin/Condition/deleteCondition",
+
+  // Blog Categories
+  BLOG_CATEGORIES: "/admin/BlogCategory/allBlogCategory",
+  CREATE_BLOG_CATEGORY: "/admin/BlogCategory/addBlogCategory",
+  UPDATE_BLOG_CATEGORY: "/admin/BlogCategory/updateBlogCategory",
+  DELETE_BLOG_CATEGORY: "/admin/BlogCategory/deleteBlogCategory",
+
+  // Blog Pages
+  BLOG_PAGES: "/admin/allBlogPage",
+  CREATE_BLOG_PAGE: "/admin/createBlogPage",
+  DELETE_BLOG_PAGE: "/admin/deleteBlogPage",
+
+  // Blogs
+  BLOGS: "/admin/allBlog",
+  GET_BLOG: "/admin/getBlog",
+  CREATE_BLOG: "/admin/addBlog",
+  UPDATE_BLOG: "/admin/updateBlog",
+  DELETE_BLOG: "/admin/deleteBlog",
+  ALL_BLOG_FOR_ADMIN: "/admin/allBlogForAdmin",
 };
 
 export const USER_STATUS = {
